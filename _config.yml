@@ -22,7 +22,7 @@ url: 'https://Apisapple.github.io'
 
 author: minyong Kim                  # change to your full name
 
-avatar: /assets/img/sample/avatar.jpg   # support internet resources
+avatar: /assets/img/sample/iron_man.jpg   # support internet resources
 
 github:
   username: Apisapple             # change to your github username
@@ -31,7 +31,7 @@ twitter:
   username: twitter_username            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
+  name: minyong Kim                  # it will shows as the copyright owner in Footer
   email: example@doamin.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
