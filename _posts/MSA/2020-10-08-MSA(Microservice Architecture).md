@@ -10,6 +10,8 @@ tags:
  - Micro Service Architecture
 ---
 
+
+
 # MSA(Microservice Architecture)
 
 > 하나의 큰 어플리케이션을 여러개의 작은 어플리케이션으로 쪼개어 변경과 조합이 가능하도록 만든 아키텍쳐
