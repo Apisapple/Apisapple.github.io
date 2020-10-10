@@ -6,11 +6,9 @@ title: MSA(Microservice Architecture)
 categories:
  - Architecture
 tags: 
- - Architecture
- - Micro Service Architecture
+ - architecture
+ - microservice architecture
 ---
-
-
 
 # MSA(Microservice Architecture)
 
