@@ -10,15 +10,13 @@ tags:
  - Micro Service architecture
 ---
 
-
-
 # MSA(Microservice Architecture)
 
 > 하나의 큰 어플리케이션을 여러개의 작은 어플리케이션으로 쪼개어 변경과 조합이 가능하도록 만든 아키텍쳐
 
 ## Monolithic 과  Microservice
 
-### [Monolithic Architecture](https://ahea.wordpress.com/2018/04/26/msa-1-monolithic-architecture-%EB%9E%80/)
+### Monolithic Architecture
 
 - 장점
     1. 어떤 기능이든지 개발되어있는 환경이 같아 복잡하지 않다.
@@ -33,7 +31,7 @@ tags:
     4. 일부분의 오류가 전체 서비스에 영향을 미친다.
     5. 기능별로 기술, 언어, 프레임 워크를 선택하기 어렵다.
 
-### [Microservice Architecture](https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4)
+### Microservice Architecture
 
 - 장점
     1. 기능별로 서비스를 개발하고, 작업 할당을 서비스 단위로 하기 떄문에 개발자가 해당 부분을 온전히 이해할 수 있다.
