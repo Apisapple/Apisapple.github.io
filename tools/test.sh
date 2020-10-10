@@ -19,7 +19,7 @@ if [[ -n $1 && -d $1 ]]; then
 fi
 
 bundle exec htmlproofer $DEST \
-#  --disable-external \
+  --disable-external \
   --check-html \
   --empty_alt_ignore \
   --allow_hash_href \
