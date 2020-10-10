@@ -1,13 +1,13 @@
 ---
 published: true
 comments: true
-date: 2020-10-10 16:00 GMT+0900
+date: 2020-10-10 16:20 GMT+0900
 title: MSA(Microservice Architecture)
 categories:
  - Architecture
 tags: 
- - architecture
- - microservice architecture
+ - Architecture
+ - Micro Service architecture
 ---
 
 # MSA(Microservice Architecture)
