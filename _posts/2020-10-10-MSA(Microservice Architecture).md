@@ -1,7 +1,7 @@
 ---
 published: true
 comments: true
-date: 2020-10-10 16:20 GMT+0900
+date: 2020-10-10 18:20 GMT+0900
 title: MSA(Microservice Architecture)
 categories:
  - Architecture
