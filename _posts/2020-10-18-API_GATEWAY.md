@@ -21,16 +21,16 @@ tags:
 하나의 큰 서비스를 수십 혹은 수백개의 작은 서비스로 나누면서, 
 이를 클라이언트에서 서비스를 직접 호출하는 형태라면 아래와 같은 문제가 생길 수 있다.
 
-![assets/images/API_GATEWAY/Untitled.png](assets/images/API_GATEWAY/Untitled.png)
+![assets/images/APIgateway/Base.png](/assets/images/APIgateway/Base.png)
 
 - 각 서비스마다 인증 / 인가 등의 공통된 로직을 구현해야하는 번거로움이 발생한다.
 - API호출을 기록하고 관리하기 어렵다.
-- 클라이언트에서 여러 마이크로 서비스에 대한 번거로운 호출을 해야한다.
+- 클라이언트에서 여러 마이크로 서비스에 대한 번거로운 호출을 해야한다.1
 - 내부 비즈니스 로직이 드러나게 되어 보안에 취약해진다.
 
 따라서, 어느 정도 규모 이상의 MSA기반 어플리케이션에서는 모든 API서버들의 엔드포인트를 단일화 해주는 서버가 필요하게 되었고 다음과 같은 형태를 띄게 되었다.
 
-![assets/images/API_GATEWAY/Untitled 1.png](assets/images/API_GATEWAY/Untitled 1.png)
+![assets/images/APIgateway/API.png](/assets/images/APIgateway/API.png)
 
 API Gateway는 API 서버 앞단에서 모든 API 서버들의 엔드포인트를 단일화 해주는 또다른 서버이다.
 API에 대한 인증과 인가 기능을 가지고 있으며 메시지의 내용에 따라 라우팅하는 역할을 담당한다.
@@ -72,7 +72,7 @@ ESB는 SOAP/XML 웹서비스 기반의 구조, API GATEWAY는 JSON/REST 기반�
 API gateway 뒷단에 다수의 API 서버가 있다고 할 때, 여러개의 API 서버로 부하를 분산하는 기능이 필요하다. 단순하게 Round Robin 방식으로 부하를 분산하는 기능뿐만 아니라, 각 서버 하드웨어에 따라 부하를 가중치를 줘서 분산하는 기능을 고려할 수 있다. 
 또한 API 서버가 장애가 발생했을 때, 이를 감지해서 로드밸런싱 리스트에서 뺴고 복구 되었을 때, 다시 로드 밸런싱 기능에 넣는 기능들이 필요하다.
 
-    ![assets/images/API_GATEWAY/Untitled 2.png](assets/images/API_GATEWAY/Untitled 2.png)
+    ![assets/images/APIgateway/Routing.png](/assets/images/APIgateway/Routing.png)
     
        <출처 : [https://bcho.tistory.com/1005](https://bcho.tistory.com/1005)>
 
