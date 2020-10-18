@@ -71,10 +71,9 @@ ESB는 SOAP/XML 웹서비스 기반의 구조, API GATEWAY는 JSON/REST 기반�
 
 API gateway 뒷단에 다수의 API 서버가 있다고 할 때, 여러개의 API 서버로 부하를 분산하는 기능이 필요하다. 단순하게 Round Robin 방식으로 부하를 분산하는 기능뿐만 아니라, 각 서버 하드웨어에 따라 부하를 가중치를 줘서 분산하는 기능을 고려할 수 있다. 
 또한 API 서버가 장애가 발생했을 때, 이를 감지해서 로드밸런싱 리스트에서 뺴고 복구 되었을 때, 다시 로드 밸런싱 기능에 넣는 기능들이 필요하다.
+![assets/images/APIgateway/Routing.png](/assets/images/APIgateway/Routing.png)
 
-    ![assets/images/APIgateway/Routing.png](/assets/images/APIgateway/Routing.png)
-    
-       <출처 : [https://bcho.tistory.com/1005](https://bcho.tistory.com/1005)>
+   <출처 : [https://bcho.tistory.com/1005](https://bcho.tistory.com/1005)>
 
 ### 서비스 어그레게이션(Aggregation)
 
