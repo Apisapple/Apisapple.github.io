@@ -89,7 +89,7 @@ return (10000 < Order.totalPrice());
 
 
 
-```Java
+```java
 /* 리팩토링 이전 */
 double basePrice = itemCnt * itemPrice;
 if(basePrice > 10000)
