@@ -27,13 +27,13 @@ description: >-                        # used by seo meta and the atom feed
   and focuses on text presentation.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://Apisapple.github.io'
+url: 'https://apisapple.github.io'
 
 github:
   username: Apisapple             # change to your github username
 
-twitter:
-  username: twitter_username            # change to your twitter username
+# twitter:
+#   username: twitter_username            # change to your twitter username
 
 social:
   # Change to your full name.
@@ -81,7 +81,7 @@ theme_mode:
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/commons/avatar.jpg
+avatar: /assets/img/sample/iron_man.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
