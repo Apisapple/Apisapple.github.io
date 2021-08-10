@@ -81,7 +81,7 @@ theme_mode: dark
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/sample/iron_man.jpg
+avatar: ./assets/img/sample/iron_man.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
