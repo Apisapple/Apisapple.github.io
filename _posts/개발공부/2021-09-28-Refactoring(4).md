@@ -2,7 +2,7 @@
 published: true
 comments: true
 date: 2021-09-28 21:00 GMT+0900
-title: 리팩토링(3)_method 정리_2
+title: 리팩토링(4)_method 정리_2
 categories:
  - Refactoring
 tags:
