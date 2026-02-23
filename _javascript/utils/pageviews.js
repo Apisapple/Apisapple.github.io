@@ -17,6 +17,32 @@ const getInitStatus = (function () {
   };
 }());
 
+function getPvContext(pathname = globalThis.location.pathname) {
+  const path = pathname || "/";
+  if (path === "/webmemo" || path.startsWith("/webmemo/")) {
+    return "webmemo";
+  }
+  return "root";
+}
+
+function getProxyUrlWithContext() {
+  const baseUrl = PvOpts.getProxyMeta();
+  const context = getPvContext();
+
+  if (context === "root") {
+    return baseUrl;
+  }
+
+  try {
+    const url = new URL(baseUrl, globalThis.location.origin);
+    url.searchParams.set("site", context);
+    return url.toString();
+  } catch {
+    const separator = baseUrl.includes("?") ? "&" : "?";
+    return `${baseUrl}${separator}site=${encodeURIComponent(context)}`;
+  }
+}
+
 const PvOpts = (function () {
   function getContent(selector) {
     return $(selector).attr("content");
@@ -48,7 +74,8 @@ const PvStorage = (function () {
   const Keys = {
     KEY_PV: "pv",
     KEY_PV_SRC: "pv_src",
-    KEY_CREATION: "pv_created_date"
+    KEY_CREATION: "pv_created_date",
+    KEY_CONTEXT: "pv_context"
   };
 
   const Source = {
@@ -68,6 +95,19 @@ const PvStorage = (function () {
     set(Keys.KEY_PV, pv);
     set(Keys.KEY_PV_SRC, src);
     set(Keys.KEY_CREATION, new Date().toJSON());
+    set(Keys.KEY_CONTEXT, getPvContext());
+  }
+
+  function getSavedContext() {
+    const saved = get(Keys.KEY_CONTEXT);
+    if (saved === null) {
+      return "root";
+    }
+    return saved;
+  }
+
+  function isCurrentContext() {
+    return getSavedContext() === getPvContext();
   }
 
   return {
@@ -75,7 +115,7 @@ const PvStorage = (function () {
       return Object.keys(Keys).length;
     },
     hasCache() {
-      return (localStorage.getItem(Keys.KEY_PV) !== null);
+      return (localStorage.getItem(Keys.KEY_PV) !== null && isCurrentContext());
     },
     getCache() {
       return JSON.parse(localStorage.getItem(Keys.KEY_PV));
@@ -101,7 +141,7 @@ const PvStorage = (function () {
       return PvStorage.getCache().totalsForAllResults["ga:pageviews"] > pv.totalsForAllResults["ga:pageviews"];
     },
     inspectKeys() {
-      if (localStorage.length !== PvStorage.keysCount()) {
+      if (localStorage.length > PvStorage.keysCount()) {
         localStorage.clear();
         return;
       }
@@ -112,6 +152,7 @@ const PvStorage = (function () {
           case Keys.KEY_PV:
           case Keys.KEY_PV_SRC:
           case Keys.KEY_CREATION:
+          case Keys.KEY_CONTEXT:
             break;
           default:
             localStorage.clear();
@@ -187,7 +228,7 @@ function fetchProxyPageviews() {
   if (PvOpts.hasProxyMeta()) {
     $.ajax({
       type: "GET",
-      url: PvOpts.getProxyMeta(),
+      url: getProxyUrlWithContext(),
       dataType: "jsonp",
       jsonpCallback: "displayPageviews",
       success: (data) => {
